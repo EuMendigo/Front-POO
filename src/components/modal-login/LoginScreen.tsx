@@ -11,10 +11,10 @@ export default function loginscreen({ closeFunction }: Props) {
     const [password, setPassword] = useState('');
     const handleLogin = async () => {
         try {
-            const response = await axios.post('/api/login', { username, password });
+            const response = await axios.post('https://restaurante-poo-api.up.railway.app/login', { username, password });
             console.log('Login Bem Sucedido')
         } catch (error) {
-            // Lida com falha na autenticação.
+            console.log('login mal sucedido')
         }
     };
     return (
