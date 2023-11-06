@@ -1,10 +1,22 @@
 import './login-screen.css'
+import React, { useState } from 'react';
+import axios from 'axios';
 
 type Props = {
     closeFunction?: () => void
 }
 
 export default function loginscreen({ closeFunction }: Props) {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const handleLogin = async () => {
+        try {
+            const response = await axios.post('/api/login', { username, password });
+            // Lida com o sucesso do login, como armazenar o token de acesso.
+        } catch (error) {
+            // Lida com falha na autenticação.
+        }
+    };
     return (
         <div className='modal-login'>
             <div className='login-screen'>
@@ -13,14 +25,24 @@ export default function loginscreen({ closeFunction }: Props) {
                 <div className='put-infos'>
                     <div className='set-email'>
                         nome de usuario ou email
-                        <input className='email-input' type='string' placeholder='USERNAME' />
+                        <input
+                            className='email-input'
+                            type='string'
+                            placeholder='USERNAME'
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)} />
                     </div>
                     <div className='set-password'>
                         senha
-                        <input className='password-input' type='password' placeholder='PASSWORD' />
+                        <input className='password-input'
+                            type='password'
+                            placeholder='PASSWORD'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
                     </div>
                 </div>
-                <div className='confirm-button'>
+                <div onClick={handleLogin} className='confirm-button'>
                     Entrar
                 </div>
             </div>
