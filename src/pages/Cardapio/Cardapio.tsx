@@ -6,13 +6,11 @@ import { useEffect, useState } from 'react';
 import Pratos from '../../components/Pratos/Pratos';
 import LoginScreen from '../../components/modal-login/LoginScreen'
 import { Oval } from 'react-loader-spinner'
-import axios, { AxiosError } from 'axios';
-import { type } from 'os';
 
 
 type ConsultaPratosResponseData = {
   id: number
-  foto: string
+  photo: string
   nome: string
   descricao: string
   preco: string
@@ -50,7 +48,7 @@ type ConsultaPratosResponseData = {
 
 export default function Cardapio() {
   const [loading, setLoading] = useState(false)
-  const [pratos, setPratos] = useState<ConsultaPratosResponseData[]>()
+  const [pratos, setPratos] = useState<ConsultaPratosResponseData[]>([]);
 
   const [nomePrato, setNomePrato] = useState("")
   const [ImagePrato, setImagePrato] = useState("")
@@ -59,6 +57,7 @@ export default function Cardapio() {
   const [visibleModalAddprato, setVisibleModalAddPrato] = useState(false)
   const [visiblefunctionbuttons, setVisiblefunctionbuttons] = useState(false)
 
+
   async function fetchData() {
     try {
       const response = await fetch('https://restaurante-poo-api.up.railway.app/restaurante');
@@ -66,15 +65,13 @@ export default function Cardapio() {
         throw new Error('Erro de servidor: ' + response.status);
       }
       const data = await response.json();
-      console.log(data);
-      setPratos(data);
+      console.log(data)
+      return data; 
     } catch (error) {
       console.error(error);
+      return []; 
     }
   }
-  
-  fetchData();
-
 
 
   // const CriarDivPrato = async () => {
@@ -103,21 +100,19 @@ export default function Cardapio() {
   //   }
   // }
 
-  useEffect(
-    () => {
-      async function loadingData() {
-        setLoading(true)
-        try {
-          const result = await fetchData
-        } finally {
-          setLoading(false)
-        }
+  useEffect(() => {
+    async function loadingData() {
+      setLoading(true);
+      try {
+        const data = await fetchData();
+        setPratos(data);
+      } finally {
+        setLoading(false);
       }
+    }
 
-      loadingData()
-    },
-    []
-  )
+    loadingData();
+  }, []);
 
   return (
     <>
@@ -194,7 +189,7 @@ export default function Cardapio() {
                 <div className='cardapio-showroom'>
                   {pratos?.map((item) => {
                     return (
-                      <Pratos foto={item.foto} nome={item.nome} descricao={item.descricao} valor={item.preco} />
+                      <Pratos foto={item.photo} nome={item.nome} descricao={item.descricao} valor={item.preco} />
 
                     )
                   }
