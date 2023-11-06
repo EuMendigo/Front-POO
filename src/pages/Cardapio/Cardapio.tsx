@@ -10,6 +10,7 @@ import axios, { AxiosError } from 'axios';
 import { type } from 'os';
 
 
+
 type ConsultaPratosResponseData = {
   id: number
   foto: string
@@ -74,6 +75,25 @@ export default function Cardapio() {
   }
   
   fetchData();
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('https://restaurante-poo-api.up.railway.app/restaurante');
+        if (response.ok) {
+          const data = await response.json();
+          setPratos(data);
+        } else {
+          console.error('Erro ao buscar pratos');
+        }
+      } catch (error) {
+        console.error('Erro ao buscar pratos', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
 
 
 
