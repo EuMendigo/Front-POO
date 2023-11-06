@@ -1,0 +1,65 @@
+.topFixedBar {
+    width: 100%;
+    height: 70px;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    align-items: center;
+    
+    position: fixed;
+    top: 0;
+    
+    background-color: #EBE1D6;
+    list-style: none;
+    
+    border-bottom: 2px solid #000000;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    
+    z-index: 1;
+    
+    font-size: 16px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+  }
+  
+  .topFixedBar .logo {
+    position: fixed;
+    width: 4%;
+    left: 5%;
+  }
+  
+  .topFixedBar li {
+    display: inline;
+    margin-right: 150px;
+    text-decoration: underline;
+    color: #0E4866;
+  
+    &:hover {
+      font-size: 18px;
+      color: #2d1f45;
+      cursor: pointer;
+    }
+  }
+  
+  .login-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #0E4866;
+    text-decoration: underline;
+  
+    &:hover {
+      font-size: 18px;
+      color: #2d1f45;
+      cursor: pointer;
+    }
+  
+  }
+  

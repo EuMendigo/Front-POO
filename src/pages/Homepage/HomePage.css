@@ -1,0 +1,110 @@
+.father-HomePage {
+  width: 100%;
+
+  display: grid;
+  flex-direction: column;
+  grid-column: auto;
+  
+  background-color: #EBE1D6;
+
+}
+
+.showroom {
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  top: 1%;
+
+  background-color: #d3c6bd;
+
+  z-index: 0;
+}
+
+.background-Photo {
+  width: 100%;
+}
+
+.background-down-button {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  
+  left: 50%;
+  bottom: 5%;
+  background-color: #ebe1d691;
+  border-radius: 50px;
+  z-index: 1;
+}
+
+.down-button {
+  width: 60%;
+
+  &:hover {
+    cursor: pointer;
+    width: 65%;
+  }
+}
+
+.lateral-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  position: absolute;
+  top: 29%;
+  left: 1.3%;
+  z-index: 1;
+}
+
+.alternates-buttons {
+  list-style: none;
+}
+
+.lateral-bar li {
+  width: 35px;
+  height: 35px;
+  background-color: #276346;
+  border: 2.5px solid #C98354;
+  border-radius: 50%;
+  margin-bottom: 70px;
+
+  &:hover {
+    background-color: #0e4866;
+    cursor: pointer;
+  }
+}
+
+
+
+.about-me{
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+  gap: 15px;
+  
+  font-size: 10px;
+  font-family: 'Inter',Arial, Helvetica, sans-serif;
+  color: #0E4866;
+
+}
+
+.about-me-box{
+  margin-top: 25px;
+  width: 80%;
+}
+
+

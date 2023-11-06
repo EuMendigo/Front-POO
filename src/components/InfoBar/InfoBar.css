@@ -1,0 +1,42 @@
+.options-infobar{
+    width: 97%;
+    height: 200px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  
+    align-items: center;
+    list-style: none;
+    
+    text-align: center;
+  
+    background-color: #8B4513;
+  
+    gap: 25px;
+  
+  }
+  
+  .options-infobar li{
+    position: flex;
+  
+    
+    display: inline;
+    font-family: 'Inter',Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .Icons-InfoBar img{
+    display: inline;
+    margin-right: 35px;
+    height: 50px;
+    width: 50px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  
+  
+  

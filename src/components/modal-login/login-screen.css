@@ -1,0 +1,135 @@
+.modal-login {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.59);
+    z-index: 20;
+
+}
+
+.login-screen {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 600px;
+    height: 650px;
+    border: 3px solid rgb(42, 41, 41);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.447);
+
+}
+
+.Close-Button {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.logo-icon {
+    position: absolute;
+    top: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+.put-infos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 50px;
+}
+
+.set-email {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Inter';
+    font-weight: 500;
+}
+
+.email-input {
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: bold;
+    width: 200px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.447);
+}
+
+
+.set-password {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Inter';
+    font-weight: 500;
+}
+
+.password-input {
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: bold;
+    width: 200px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.447);
+}
+
+.confirm-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    bottom: 100px;
+    font-size: 20px;
+    border-radius: 50px;
+    background-color: #00BFFF;
+    font-family: 'Inter';
+    font-weight: bold;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.confirm-button:hover,
+.confirm-button:after {
+    cursor: pointer;
+    content: '';
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background: #4169E1;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.447);
+}
+
+.confirm-button:hover,
+.confirm-button:before {
+    cursor: pointer;
+    font-family: 'Inter';
+    speak: none;
+    font-weight: bold;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
