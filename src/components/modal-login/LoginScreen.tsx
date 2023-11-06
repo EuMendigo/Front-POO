@@ -1,14 +1,16 @@
 import './login-screen.css'
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 type Props = {
     closeFunction?: () => void
 }
 
-export default function loginscreen({ closeFunction }: Props) {
+
+export default function LoginScreen({ closeFunction }: Props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
     const handleLogin = async () => {
         try {
             const response = await axios.post('https://restaurante-poo-api.up.railway.app/login', { username, password });
