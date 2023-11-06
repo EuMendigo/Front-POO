@@ -12,7 +12,7 @@ export default function loginscreen({ closeFunction }: Props) {
     const handleLogin = async () => {
         try {
             const response = await axios.post('/api/login', { username, password });
-            // Lida com o sucesso do login, como armazenar o token de acesso.
+            console.log('Login Bem Sucedido')
         } catch (error) {
             // Lida com falha na autenticação.
         }
