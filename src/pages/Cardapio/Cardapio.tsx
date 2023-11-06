@@ -74,32 +74,6 @@ export default function Cardapio() {
   }
 
 
-  // const CriarDivPrato = async () => {
-  //   setLoading(true)
-  //   try {
-  //     await adicionaPrato({
-  //       id: 1,
-  //       foto: 'https://i.imgur.com/1nVdCyW.png',
-  //       nome: "Pizza Portuguesa",
-  //       descricao: 'Pizza de portuguesa, possui queijo, presunto, calabresa, ovo, milho, ervilha e oregano',
-  //       preco: '45,99'
-  //     })
-
-  // setPratos(exemploConsultaPratoResposta)
-  // await fetch("/adicionapratos", {
-  //   method: "POST",
-  //   body: JSON.stringify({
-  //     foto: 'https://i.imgur.com/1nVdCyW.png',
-  //     nome: "Pizza Portuguesa",
-  //     descricao: 'Pizza de portuguesa, possui queijo, presunto, calabresa, ovo, milho, ervilha e oregano',
-  //     preco: 45.99
-  //   })
-  // })
-  //   } finally {
-  //     setLoading(false)
-  //   }
-  // }
-
   useEffect(() => {
     async function loadingData() {
       setLoading(true);
@@ -159,7 +133,7 @@ export default function Cardapio() {
               <img onClick={() => setVisiblefunctionbuttons(!visiblefunctionbuttons)} className='edit-icon' src={require('../../Assets/Edit-Button.svg').default} />
               Editar
             </div>
-            <div className='add-button'>
+            <div onClick={() => setVisibleModalAddPrato(!visibleModalAddprato)} className='add-button'>
               <img className='add-icon' src={require('../../Assets/Add-Button.svg').default} />
               Adicionar
             </div>
