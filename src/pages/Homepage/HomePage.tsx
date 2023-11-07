@@ -3,8 +3,11 @@ import "./HomePage.css";
 import TopFixedBar from "../../components/TopFixedBar/TopFixedBar";
 import InfoBar from "../../components/InfoBar/InfoBar";
 import LoginScreen from "../../components/modal-login/LoginScreen";
+import { useAuth } from "../../contexts/AuthContexts";
 
 export default function HomePage() {
+
+  const { loading } = useAuth()
 
   const handleScrollToAboutme = () => {
     const aboutmeSection = document.getElementById('about-me')
@@ -14,6 +17,14 @@ export default function HomePage() {
     }
   }
   const [visibleModalLogin, setVisibleModalLogin] = useState(false)
+
+  if (loading) {
+    return (
+      <div>
+        <h1>Carregando....</h1>
+      </div>
+    )
+  }
 
   return (
     <div className="father-HomePage">

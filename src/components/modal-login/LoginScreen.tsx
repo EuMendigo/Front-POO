@@ -1,6 +1,7 @@
 import './login-screen.css'
 import { useState } from 'react';
 import axios from 'axios';
+import { useAuth } from '../../contexts/AuthContexts';
 
 type Props = {
     closeFunction?: () => void
@@ -8,20 +9,23 @@ type Props = {
 
 
 export default function LoginScreen({ closeFunction }: Props) {
+    const { signIn, loading } = useAuth()
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleLogin = async () => {
-        try {
-            const response = await axios.post('https://restaurante-poo-api.up.railway.app/login', { username, password });
-            console.log('Login Bem Sucedido')
-        } catch (error) {
-            console.log('login mal sucedido')
-        }
+        signIn({ usuario: username, password }).finally(() => {
+            if (closeFunction) {
+                closeFunction()
+            }
+        })
     };
+
     return (
         <div className='modal-login'>
             <div className='login-screen'>
+                <img className='background-login-photo' src={require('../../Assets/Italy.jpg')} />
                 <img onClick={closeFunction} className='Close-Button' src={require('../../Assets/Close-Button.svg').default} />
                 <img className='logo-icon' src={require('../../Assets/logo.png')} />
                 <div className='put-infos'>
@@ -45,7 +49,9 @@ export default function LoginScreen({ closeFunction }: Props) {
                     </div>
                 </div>
                 <div onClick={handleLogin} className='confirm-button'>
-                    Entrar
+                    {loading ? <><h1>Carregando</h1></> : "Entrar"}
+
+
                 </div>
             </div>
         </div>
