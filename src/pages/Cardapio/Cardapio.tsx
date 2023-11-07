@@ -13,7 +13,7 @@ type ConsultaPratosResponseData = {
   photo: string
   nome: string
   descricao: string
-  preco: string
+  preco: boolean
 }
 
 // const exemploConsultaPratoResposta = [

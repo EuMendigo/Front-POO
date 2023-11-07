@@ -6,7 +6,7 @@ type PratosProps = {
     foto: string
     nome: String
     descricao: string
-    valor: string
+    valor: boolean
 }
 
 type Props = {
